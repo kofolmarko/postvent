@@ -17,6 +17,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    cursor: cell;
 }
 
 .word {
@@ -34,7 +35,7 @@ body {
 
 .word:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    cursor: pointer;
+    cursor: cell;
 }
 
 .pronunciation {
@@ -65,7 +66,7 @@ body {
 }
 
 .gift:hover {
-    cursor: pointer;
+    cursor: cell;
     filter: brightness(1.2);
     transform: scale(1.6);
 }
@@ -100,4 +101,109 @@ body {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
+}
+
+.events {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.events:hover {
+    cursor: cell;
+    background-color: black;
+}
+
+.trigger {
+    display: inline-block;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+/* .word.essay {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+    justify-items: center;
+    align-items: center; 
+  } 
+*/
+  
+  .trigger {
+    grid-column: 1 / span 2; /* This makes the trigger span the whole first row */
+    grid-row: 1; /* This places the trigger in the first row */
+  }
+  
+  .horsemen:nth-child(2) {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  
+  .horsemen:nth-child(3) {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  
+  .horsemen:nth-child(4) {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  
+  .horsemen:nth-child(5) {
+    grid-row: 3;
+    grid-column: 2;
+  }
+
+.horsemen {
+    position: relative;
+    display: none;
+    text-align: center;
+    width: 70%;
+    height: 50%;
+    border: 1px solid rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.horsemen:hover {
+    filter: brightness(1.2);
+}
+
+.content {
+    display: none;
+}
+
+.horsemen .content {
+    position: relative; /* This ensures the text content is above the ::before pseudo-element */
+  }
+
+.horsemen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7); /* black overlay, 50% opacity */
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255, 0.2);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: none;
+    cursor: cell;
+}
+
+.draggable {
+    display: none;
+    height: 300px;
+}
+
+.content {
+    font-size: 20px;
 }
